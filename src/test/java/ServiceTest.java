@@ -24,6 +24,7 @@ public class ServiceTest {
 //        MockitoAnnotations.initMocks(this);
 //    }
 
+
     @Test
     public void serviceTest(){
         when(fileReaderUtil.readFile()).thenReturn("bla");
@@ -32,4 +33,11 @@ public class ServiceTest {
         assertThat(expected, is(mockedAnswer));
     }
 
+    @Test
+    public void serviceTest2(){
+        when(fileReaderUtil.readFile()).thenReturn("bla");
+        String expected = "bla";
+        String mockedAnswer = new Service(fileReaderUtil).serveList();
+        assertThat(expected, is(mockedAnswer));
+    }
 }
